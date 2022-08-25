@@ -1,6 +1,3 @@
-#  create a migration repository
-"flask db init"
-
 # creating task table
 "flask db migrate -m "Initial migration."
 
