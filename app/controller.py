@@ -7,4 +7,21 @@ class TaskResource(Resource):
         'title', type=str, required=True, help='this field cannot be left blank')
     
     def get(self):
-        return {'msg':'hello'}
+        return {'msg':'get'}
+
+    def post(self):
+        return {'msg': 'create'}
+
+class TaskDetailResource(Resource):
+    parser = reqparse.RequestParser()
+    parser.add_argument(
+        'title', type=str, required=True, help='this field cannot be left blank')
+    
+    def get(self, id):
+        return {'msg':'get-id'}
+
+    def put(self, id):
+        return {'msg': 'put'}
+    
+    def delete(self, id):
+        return {'msg': 'delete'}

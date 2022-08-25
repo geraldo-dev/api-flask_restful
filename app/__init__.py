@@ -16,7 +16,8 @@ Migrate(app, db)
 from app.model import Task
 
 #controllers
-from app.controller import TaskResource
+from app.controller import TaskResource, TaskDetailResource
 
 #routes
 api.add_resource(TaskResource, '/')
+api.add_resource(TaskResource, '/<int:id>')
