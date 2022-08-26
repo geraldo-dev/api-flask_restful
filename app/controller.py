@@ -7,7 +7,11 @@ class TaskResource(Resource):
         'title', type=str, required=True, help='this field cannot be left blank')
     
     def get(self):
-        return {'msg':'get'}
+        tasks = Task.query.all()
+        data = []
+        for task in tasks:
+            data.append(task.json())
+        return {'tasks': data }
 
     def post(self):
         data = TaskResource.parser.parse_args()
