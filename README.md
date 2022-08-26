@@ -1,13 +1,36 @@
-# creating task table
-"flask db migrate -m "Initial migration."
+## create virtual environment
+````
+python -m venv env
+````
+## activate virtual environment
+in the window
+````
+env\scripts\active.bat
+````
 
-# apply the migration to the database
-"flask db upgrade"
+##  install dependerc
+````
+pip install -r requirements.txt
+````
 
-# start app
-"flask run"
+## creating task table
+````
+flask db migrate -m "Initial migration."
+````
 
-# start mode development
+## apply the migration to the database
+````
+flask db upgrade
+````
+
+## start production app
+````
+flask run
+````
+
+## start mode development
+````
 set FLASK_ENV=development
 set FLASK_APP=run.py
 flask run
+````
