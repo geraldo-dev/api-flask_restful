@@ -28,7 +28,10 @@ class TaskDetailResource(Resource):
         'title', type=str, required=True, help='this field cannot be left blank')
     
     def get(self, id):
-        return {'msg':'get-id'}
+        task = Task.find_by_task(id)
+        if task:
+            return {'task': task.json()}
+        return {'message':'task not found'}, 404
 
     def put(self, id):
         return {'msg': 'put'}

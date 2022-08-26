@@ -18,6 +18,13 @@ class Task(db.Model):
         db.session.add(self)
         db.session.commit()
 
+    @classmethod
+    def find_by_task(cls, id):
+        task = cls.query.filter_by(id=id).first()
+        if task:
+            return task
+        return None
+        
     def json(self):
         return {
             'id': self.id,
