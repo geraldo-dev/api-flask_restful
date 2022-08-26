@@ -20,4 +20,4 @@ from app.controller import TaskResource, TaskDetailResource
 
 #routes
 api.add_resource(TaskResource, '/')
-api.add_resource(TaskResource, '/<int:id>')
+api.add_resource(TaskDetailResource, '/<int:id>')
