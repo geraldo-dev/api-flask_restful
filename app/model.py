@@ -21,7 +21,9 @@ class Task(db.Model):
     def update_task(self, title):
         self.title = title
 
-
+    def delete_task(self):
+        db.session.delete(self)
+        db.session.commit()
 
     @classmethod
     def find_by_task(cls, id):

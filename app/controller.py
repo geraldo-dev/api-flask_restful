@@ -46,5 +46,11 @@ class TaskDetailResource(Resource):
         return {'message': 'task not fond'}, 404
     
     def delete(self, id):
-        
+        find_task  = Task.find_by_task(id)
+        if find_task:
+            try:
+                find_task.delete_task()
+                return {'message': 'deleted task'}, 200
+            except:
+                return {'message': 'an error occurred delete the task'}, 500
         return {'message': 'task not fond'}, 404
