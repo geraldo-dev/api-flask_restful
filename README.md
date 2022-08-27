@@ -8,7 +8,7 @@ in the window
 env\scripts\active.bat
 ````
 
-##  install dependerc
+##  install dependencies
 ````
 pip install -r requirements.txt
 ````

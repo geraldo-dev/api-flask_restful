@@ -17,6 +17,11 @@ class Task(db.Model):
     def save_task(self):
         db.session.add(self)
         db.session.commit()
+    
+    def update_task(self, title):
+        self.title = title
+
+
 
     @classmethod
     def find_by_task(cls, id):
